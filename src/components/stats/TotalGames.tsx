@@ -49,7 +49,7 @@ export const TotalGames = () => {
             type='radio'
             value={DateOption.DAY}
             checked={dateOption === DateOption.DAY}
-          />{' '}
+          />
           DAY
         </label>
         <label>
@@ -58,7 +58,7 @@ export const TotalGames = () => {
             type='radio'
             value={DateOption.WEEK}
             checked={dateOption === DateOption.WEEK}
-          />{' '}
+          />
           WEEK
         </label>
         <label>
@@ -67,7 +67,7 @@ export const TotalGames = () => {
             type='radio'
             value={DateOption.MONTH}
             checked={dateOption === DateOption.MONTH}
-          />{' '}
+          />
           MONTH
         </label>
       </div>
