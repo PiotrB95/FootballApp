@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useGetPlayersForTeamQuery } from '../../queries/player/useGetPlayersForTeamQuery'
 import { TeamEntity } from '../../types/team'
 
@@ -7,6 +8,7 @@ type SingleTeamProps = {
 
 export const SingleTeam = ({ team }: SingleTeamProps) => {
   const { data, isFetching } = useGetPlayersForTeamQuery(team.id)
+  const [showForm, setShowForm] = useState<boolean>(false)
 
   if (isFetching) return <p>Loading...</p>
 
@@ -27,7 +29,9 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
             </li>
           ))}
       </ul>
-      <p>Edit team</p>
+      <button onClick={() => setShowForm((prev) => !prev)}>Edit</button>
+      <button>Delete</button>
+      {showForm ? <p>Formularz</p> : null}
       <hr />
     </div>
   )
