@@ -1,3 +1,3 @@
 module.exports = {
-  '*.{ts,tsx}': ['npm run prettify', 'npm run typecheck', 'npm run lint --fix'],
+  '*.{ts,tsx}': ['npm run prettify', () => 'tsc --noEmit -p tsconfig.json', 'npm run lint --fix'],
 }

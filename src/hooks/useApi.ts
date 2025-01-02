@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL
 
 export const useApi = () => {
-  const call = async <R, P = {}>(
+  const call = async <R, P = object>(
     url: string,
     method: 'GET' | 'DELETE' | 'POST' | 'PUT',
     payload?: P,
@@ -18,9 +18,7 @@ export const useApi = () => {
       const response = await fetch(`${API_URL}${url}`, fetchConfig)
 
       if (response.ok) {
-        console.log(response, 'test')
         const data: R = await response.json()
-        console.log(data, 'test')
         return data
       } else {
         const apiError: string = await response.text()
