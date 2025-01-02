@@ -10,7 +10,8 @@
     "prettify": "prettier --write",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit --jsx react-jsx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "db": "json-server --watch data/db.json --port 8080"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.11",
