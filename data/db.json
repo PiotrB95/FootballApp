@@ -1,36 +1,48 @@
 {
   "players": [
     {
-      "playerId": 123123,
-      "playerName": "Arnold",
-      "playerSurname": "Mbappe",
+      "id": "123123",
+      "name": "Arnold",
+      "surname": "Mbappe",
+      "teamId": 1
+    },
+    {
+      "id": "1231223",
+      "name": "BArnold",
+      "surname": "Mbappe",
+      "teamId": 1
+    },
+    {
+      "id": "1b9f",
+      "name": "Marcin",
+      "surname": "Gracz",
       "teamId": 1
     }
   ],
   "teams": [
     {
-      "teamId": 1,
-      "teamName": "Kasztany",
-      "teamSince": 1992,
-      "teamLocation": "Warszawa"
+      "id": "1",
+      "name": "Kasztany",
+      "since": 1992,
+      "location": "Warszawa"
     },
     {
-      "teamId": 2,
-      "teamName": "Kasztany",
-      "teamSince": 1992,
-      "teamLocation": "Warszawa"
+      "id": "2",
+      "name": "Kasztany",
+      "since": 1992,
+      "location": "Warszawa"
     }
   ],
   "games": [
     {
-      "gameId": 1,
-      "gameType": "liga",
-      "gameLocation": "Warszawa",
-      "gameTime": 90,
-      "gameScoreTeamA": 2,
-      "gameScoreTeamB": 1,
-      "gameTeamA": 1,
-      "gameTeamB": 2
+      "id": "1",
+      "type": "liga",
+      "location": "Warszawa",
+      "time": 90,
+      "scoreTeamA": 2,
+      "scoreTeamB": 1,
+      "teamA": 1,
+      "teamB": 2
     }
   ]
 }
