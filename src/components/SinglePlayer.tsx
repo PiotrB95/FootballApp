@@ -1,4 +1,4 @@
-// import { useGetSingleTeamQuery } from "../queries/team/useGetSingleTeamQuery";
+import { useGetSingleTeamQuery } from '../queries/team/useGetSingleTeamQuery'
 import { PlayerEntity } from '../types'
 
 type SinglePlayerProps = {
@@ -6,17 +6,17 @@ type SinglePlayerProps = {
 }
 
 export const SinglePlayer = ({ player }: SinglePlayerProps) => {
-  // const { data: teamData, isFetching } = useGetSingleTeamQuery(player.teamId);
+  const { data: teamData, isFetching } = useGetSingleTeamQuery(player.teamId)
 
-  // const teamName = isFetching ? 'Loading...' : teamData?.name || 'Brak drużyny';
+  const teamName = isFetching ? 'Loading...' : teamData?.name || 'Brak drużyny'
 
-  // console.log(teamData);
+  console.log(teamData)
 
   return (
     <div>
       <p>Name: {player.name}</p>
       <p>Surname: {player.surname}</p>
-      {/* <p>Team: {teamName}</p> */}
+      <p>Team: {teamName}</p>
       <p>Edit</p>
       <p>Delete</p>
       <hr />
