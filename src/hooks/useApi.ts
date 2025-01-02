@@ -15,7 +15,9 @@ export const useApi = () => {
             const response = await fetch(`${API_URL}${url}`, fetchConfig)
 
             if(response.ok) {
+                console.log(response, 'test');
                 const data: R = await response.json();
+                console.log(data, 'test');
                 return data;
             } else {
                 const apiError: string = await response.text();
