@@ -17,6 +17,18 @@
       "name": "Marcin",
       "surname": "Gracz",
       "teamId": null
+    },
+    {
+      "id": "1b2f",
+      "name": "Marian",
+      "surname": "Graczek",
+      "teamId": 2
+    },
+    {
+      "id": "8b2f",
+      "name": "Szczepan",
+      "surname": "Plejson",
+      "teamId": 1
     }
   ],
   "teams": [
@@ -31,6 +43,12 @@
       "name": "Żołędzie",
       "since": 1993,
       "location": "Gdańsk"
+    },
+    {
+      "id": "2wad",
+      "name": "Jarzębinki",
+      "since": 1990,
+      "location": "Kraków"
     }
   ],
   "games": [
@@ -42,7 +60,30 @@
       "scoreTeamA": 2,
       "scoreTeamB": 1,
       "teamA": 1,
-      "teamB": 2
+      "teamB": 2,
+      "date": "2025-01-02T14:48:00.000Z"
+    },
+    {
+      "id": "2",
+      "type": "puchar",
+      "location": "Gdańsk",
+      "time": 90,
+      "scoreTeamA": 4,
+      "scoreTeamB": 1,
+      "teamA": 2,
+      "teamB": 1,
+      "date": "2025-01-01T15:48:00.000Z"
+    },
+    {
+      "id": "bs23",
+      "type": "puchar",
+      "location": "kraków",
+      "time": 90,
+      "scoreTeamA": 3,
+      "scoreTeamB": 3,
+      "teamA": "2wad",
+      "teamB": 1,
+      "date": "2025-01-13T14:48:00.000Z"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { useGetPlayersQuery } from '../queries/player/useGetPlayersQuery'
+import { useGetPlayersQuery } from '../../queries/player/useGetPlayersQuery'
 import { SinglePlayer } from './SinglePlayer'
 
 export const PlayersList = () => {

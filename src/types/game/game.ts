@@ -7,4 +7,5 @@ export interface GameEntity {
   scoreTeamB: number
   teamA: number
   teamB: number
+  date: string
 }

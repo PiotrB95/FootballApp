@@ -9,3 +9,9 @@ export enum ModeName {
   Light = 'light',
   Dark = 'dark',
 }
+
+export enum DateOption {
+  DAY = 'day',
+  WEEK = 'week',
+  MONTH = 'month',
+}
