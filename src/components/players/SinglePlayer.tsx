@@ -3,6 +3,7 @@ import { useGetSingleTeamQuery } from '../../queries/team/useGetSingleTeamQuery'
 import { PlayerEntity } from '../../types'
 import { EditPlayer } from './EditPlayer'
 import { useDeletePlayerMutation } from '../../queries/player/useDeletePlayerMutation.ts'
+import { ActionButton } from '../styled/ActionButton'
 
 type SinglePlayerProps = {
   player: PlayerEntity
@@ -24,8 +25,11 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
       <p>Name: {player.name}</p>
       <p>Surname: {player.surname}</p>
       <p>Team: {teamName}</p>
-      <button onClick={() => setShowForm((prev) => !prev)}>Edit</button>
-      <button onClick={() => handleDelete(player.id)}>Delete</button>
+      <ActionButton
+        label={'Edit'}
+        onClick={() => setShowForm((prev) => !prev)}
+      />
+      <ActionButton label={'Delete'} onClick={() => handleDelete(player.id)} />
       {showForm ? <EditPlayer player={player} /> : null}
       <hr />
     </div>

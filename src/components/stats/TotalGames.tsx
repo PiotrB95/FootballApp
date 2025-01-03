@@ -3,6 +3,7 @@ import { useGetGamesQuery } from '../../queries/game/useGetGamesQuery'
 import { DateOption } from '../../types/enums'
 import { filterByDay, filterByMonth, filterByWeek } from './filterDateFunctions'
 import { GameEntity } from '../../types'
+import { GraphDiv } from '../styled/GraphDiv'
 
 export const TotalGames = () => {
   const { data: games, isFetching } = useGetGamesQuery()
@@ -78,14 +79,7 @@ export const TotalGames = () => {
           alignItems: 'center',
         }}
       >
-        <div
-          style={{
-            height: `${20 * totalGames.length}px`,
-            background: 'red',
-            width: '100px',
-            marginTop: '25px',
-          }}
-        />
+        <GraphDiv height={20 * totalGames.length + 1} />
         <div
           style={{
             display: 'flex',

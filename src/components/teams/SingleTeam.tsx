@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetPlayersForTeamQuery } from '../../queries/player/useGetPlayersForTeamQuery'
 import { TeamEntity } from '../../types/team'
+import { ActionButton } from '../styled/ActionButton'
 import { EditTeam } from './EditTeam.tsx'
 import { useDeleteTeamMutation } from '../../queries/team/useDeleteTeamMutation.ts'
 
@@ -36,8 +37,11 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
             </li>
           ))}
       </ul>
-      <button onClick={() => setShowForm((prev) => !prev)}>Edit</button>
-      <button onClick={() => handleDelete(team.id)}>Delete</button>
+      <ActionButton
+        label={'Edit'}
+        onClick={() => setShowForm((prev) => !prev)}
+      />
+      <ActionButton label={'Delete'} onClick={() => handleDelete(team.id)} />
       {showForm ? <EditTeam team={team} /> : null}
       <hr />
     </div>
