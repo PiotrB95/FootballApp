@@ -1,5 +1,5 @@
 export interface TeamEntity {
-  id: number
+  id: string
   name: string
   since: number
   location: string

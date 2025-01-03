@@ -1,11 +1,11 @@
 export interface GameEntity {
-  id: number
+  id: string
   type: string
   location: string
   time: number
   scoreTeamA: number
   scoreTeamB: number
-  teamA: number
-  teamB: number
+  teamA: string
+  teamB: string
   date: string
 }

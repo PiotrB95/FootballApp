@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetSingleTeamQuery } from '../../queries/team/useGetSingleTeamQuery'
 import { PlayerEntity } from '../../types'
+import { EditPlayer } from './EditPlayer'
 
 type SinglePlayerProps = {
   player: PlayerEntity
@@ -19,7 +20,7 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
       <p>Team: {teamName}</p>
       <button onClick={() => setShowForm((prev) => !prev)}>Edit</button>
       <button>Delete</button>
-      {showForm ? <p>Formularz</p> : null}
+      {showForm ? <EditPlayer player={player} /> : null}
       <hr />
     </div>
   )

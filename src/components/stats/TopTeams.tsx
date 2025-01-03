@@ -4,7 +4,7 @@ import { useGetTeamsQuery } from '../../queries/team/useGetTeamsQuery'
 import { TeamEntity } from '../../types/team'
 
 interface TeamGoals {
-  [teamId: number]: number
+  [teamId: string]: number
 }
 
 interface TeamEntityWithScore extends TeamEntity {
@@ -54,7 +54,7 @@ export const TopTeams = () => {
   }, [teams, games])
 
   if (teamsFetching || gamesFetching) {
-    return <div>Ładowanie...</div>
+    return <div>Loading...</div>
   }
 
   return (

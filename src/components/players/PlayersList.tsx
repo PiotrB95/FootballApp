@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetPlayersQuery } from '../../queries/player/useGetPlayersQuery'
 import { SinglePlayer } from './SinglePlayer'
+import { AddPlayer } from './AddPlayer'
 
 export const PlayersList = () => {
   const { data, isFetching } = useGetPlayersQuery()
@@ -16,7 +17,7 @@ export const PlayersList = () => {
       <button onClick={() => setShowForm((prev) => !prev)}>
         Create player
       </button>
-      {showForm ? <p>Formularz</p> : null}
+      {showForm ? <AddPlayer /> : null}
       <hr />
       {data.map((player) => (
         <SinglePlayer key={player.id} player={player} />
