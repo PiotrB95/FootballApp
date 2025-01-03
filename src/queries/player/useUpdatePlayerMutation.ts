@@ -1,15 +1,15 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { PlayerDto, PlayerEntity } from '../../types'
-import { useApi } from '../../hooks/useApi.ts'
+import { useApi } from '../../hooks/useApi'
+import { PlayerEntity, PlayerDto } from '../../types'
 
-export const useCreatePlayerMutation = () => {
-  const { apiPost } = useApi()
+export const useUpdatePlayerMutation = (playerId: string) => {
+  const { apiPut } = useApi()
   const queryClient = useQueryClient()
 
   const { mutate, isPending } = useMutation({
-    mutationKey: ['players', 'create'],
+    mutationKey: ['players', 'update', playerId],
     mutationFn: async (payload: PlayerDto) => {
-      return apiPost<PlayerEntity, PlayerDto>('players', payload)
+      return apiPut<PlayerEntity, PlayerDto>(`players/${playerId}`, payload)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({

@@ -1,6 +1,6 @@
 export interface TeamEntity {
-  teamId: number
-  teamName: string
-  teamSince: number
-  teamLocation: string
+  id: string
+  name: string
+  since: number
+  location: string
 }

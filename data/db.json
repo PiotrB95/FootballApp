@@ -1,22 +1,52 @@
 {
   "players": [
     {
-      "id": "123123",
       "name": "Arnold",
       "surname": "Mbappe",
-      "teamId": 1
+      "teamId": "1",
+      "id": "1"
     },
     {
-      "id": "1231223",
-      "name": "BArnold",
-      "surname": "Mbappe",
-      "teamId": 1
+      "name": "Barnold",
+      "surname": "Mbappe3",
+      "teamId": null,
+      "id": "2"
     },
     {
       "id": "1b9f",
       "name": "Marcin",
       "surname": "Gracz",
-      "teamId": 1
+      "teamId": null
+    },
+    {
+      "id": "1b2f",
+      "name": "Marian",
+      "surname": "Graczek",
+      "teamId": "2"
+    },
+    {
+      "name": "Szczepan",
+      "surname": "Plejsonix",
+      "teamId": "1",
+      "id": "8b2f"
+    },
+    {
+      "id": "e5f7",
+      "name": "Jan",
+      "surname": "Bednarek",
+      "teamId": null
+    },
+    {
+      "id": "8ea3",
+      "name": "Foot",
+      "surname": "Ball",
+      "teamId": null
+    },
+    {
+      "id": "f7de",
+      "name": "Michał",
+      "surname": "Anioł",
+      "teamId": null
     }
   ],
   "teams": [
@@ -28,9 +58,15 @@
     },
     {
       "id": "2",
-      "name": "Kasztany",
-      "since": 1992,
-      "location": "Warszawa"
+      "name": "Żołędzie",
+      "since": 1993,
+      "location": "Gdańsk"
+    },
+    {
+      "id": "2wad",
+      "name": "Jarzębinki",
+      "since": 1990,
+      "location": "Kraków"
     }
   ],
   "games": [
@@ -42,7 +78,30 @@
       "scoreTeamA": 2,
       "scoreTeamB": 1,
       "teamA": 1,
-      "teamB": 2
+      "teamB": 2,
+      "date": "2025-01-02T14:48:00.000Z"
+    },
+    {
+      "id": "2",
+      "type": "puchar",
+      "location": "Gdańsk",
+      "time": 90,
+      "scoreTeamA": 4,
+      "scoreTeamB": 1,
+      "teamA": 2,
+      "teamB": 1,
+      "date": "2025-01-01T15:48:00.000Z"
+    },
+    {
+      "id": "bs23",
+      "type": "puchar",
+      "location": "kraków",
+      "time": 90,
+      "scoreTeamA": 3,
+      "scoreTeamB": 3,
+      "teamA": "2wad",
+      "teamB": 1,
+      "date": "2025-01-13T14:48:00.000Z"
     }
   ]
 }

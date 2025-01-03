@@ -1,8 +1,8 @@
 export interface PlayerEntity {
-  id: number
+  id: string
   name: string
   surname: string
-  teamId: number | null
+  teamId: string | null
 }
 
-export type CreatePlayerDto = Omit<PlayerEntity, 'id'>
+export type PlayerDto = Omit<PlayerEntity, 'id'>
