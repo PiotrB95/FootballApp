@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent } from 'react'
 import { PlayerDto } from '../../types'
+import { ActionButton } from '../styled/ActionButton'
 
 type PlayerFormProps = {
   handleSubmit: (e: FormEvent) => void
@@ -39,9 +40,7 @@ export const PlayerForm = ({
           onChange={handleChange}
         />
       </div>
-      <button type='submit' disabled={isPending}>
-        Save
-      </button>
+      <ActionButton type='submit' disabled={isPending} label={'Save'} />
     </form>
   )
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetGamesQuery } from '../../queries/game/useGetGamesQuery'
 import { SingleGame } from './SingleGame'
+import { CreateButton } from '../styled/CreateButton'
 
 export const GamesList = () => {
   const { data, isFetching } = useGetGamesQuery()
@@ -13,7 +14,10 @@ export const GamesList = () => {
   return (
     <div>
       <hr />
-      <button onClick={() => setShowForm((prev) => !prev)}>Create game</button>
+      <CreateButton
+        label={'Create game'}
+        onClick={() => setShowForm((prev) => !prev)}
+      />
       {showForm ? <p>Formularz</p> : null}
       <hr />
       {data.map((game) => (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetPlayersForTeamQuery } from '../../queries/player/useGetPlayersForTeamQuery'
 import { TeamEntity } from '../../types/team'
+import { ActionButton } from '../styled/ActionButton'
 
 type SingleTeamProps = {
   team: TeamEntity
@@ -29,8 +30,11 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
             </li>
           ))}
       </ul>
-      <button onClick={() => setShowForm((prev) => !prev)}>Edit</button>
-      <button>Delete</button>
+      <ActionButton
+        label={'Edit'}
+        onClick={() => setShowForm((prev) => !prev)}
+      />
+      <ActionButton label={'Delete'} />
       {showForm ? <p>Formularz</p> : null}
       <hr />
     </div>

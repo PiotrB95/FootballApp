@@ -1,4 +1,6 @@
 import { ModeName, TabName } from '../types/enums'
+import { MenuButton } from './styled/MenuButton'
+import { MenuDiv } from './styled/MenuDiv'
 
 type AppBarProps = {
   setTab: (name: TabName) => void
@@ -8,20 +10,26 @@ type AppBarProps = {
 
 export const AppBar = ({ setTab, setThemeMode, themeMode }: AppBarProps) => {
   return (
-    <div>
-      <button onClick={() => setTab(TabName.Players)}>Gracze</button>
-      <button onClick={() => setTab(TabName.Teams)}>Drużyny</button>
-      <button onClick={() => setTab(TabName.Games)}>Rozgrywki</button>
-      <button onClick={() => setTab(TabName.Stats)}>Statystyki</button>
-      {themeMode === ModeName.Light ? (
-        <button onClick={() => setThemeMode(ModeName.Dark)}>
-          Włącz tryb ciemny
-        </button>
-      ) : (
-        <button onClick={() => setThemeMode(ModeName.Light)}>
-          Włączy tryb jasny
-        </button>
-      )}
-    </div>
+    <MenuDiv>
+      <div>
+        <MenuButton label={'Players'} onClick={() => setTab(TabName.Players)} />
+        <MenuButton label={'Teams'} onClick={() => setTab(TabName.Teams)} />
+        <MenuButton label={'Games'} onClick={() => setTab(TabName.Games)} />
+        <MenuButton label={'Stats'} onClick={() => setTab(TabName.Stats)} />
+      </div>
+      <div>
+        {themeMode === ModeName.Light ? (
+          <MenuButton
+            label={'Dark Mode Off'}
+            onClick={() => setThemeMode(ModeName.Dark)}
+          />
+        ) : (
+          <MenuButton
+            label={'Dark Mode On'}
+            onClick={() => setThemeMode(ModeName.Light)}
+          />
+        )}
+      </div>
+    </MenuDiv>
   )
 }
