@@ -9,3 +9,5 @@ export interface GameEntity {
   teamB: string
   date: string
 }
+
+export type GameDto = Omit<GameEntity, 'id'>

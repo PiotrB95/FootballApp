@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetTeamsQuery } from '../../queries/team/useGetTeamsQuery'
 import { SingleTeam } from './SingleTeam'
+import { AddTeam } from './AddTeam.tsx'
 
 export const TeamsList = () => {
   const { data, isFetching } = useGetTeamsQuery()
@@ -14,7 +15,7 @@ export const TeamsList = () => {
     <div>
       <hr />
       <button onClick={() => setShowForm((prev) => !prev)}>Create team</button>
-      {showForm ? <p>Formularz</p> : null}
+      {showForm ? <AddTeam /> : null}
       <hr />
       {data.map((team) => (
         <SingleTeam key={team.id} team={team} />

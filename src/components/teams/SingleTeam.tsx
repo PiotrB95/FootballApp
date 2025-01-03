@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useGetPlayersForTeamQuery } from '../../queries/player/useGetPlayersForTeamQuery'
 import { TeamEntity } from '../../types/team'
+import { EditTeam } from './EditTeam.tsx'
+import { useDeleteTeamMutation } from '../../queries/team/useDeleteTeamMutation.ts'
 
 type SingleTeamProps = {
   team: TeamEntity
@@ -8,11 +10,16 @@ type SingleTeamProps = {
 
 export const SingleTeam = ({ team }: SingleTeamProps) => {
   const { data, isFetching } = useGetPlayersForTeamQuery(team.id)
+  const { mutate } = useDeleteTeamMutation()
   const [showForm, setShowForm] = useState<boolean>(false)
 
   if (isFetching) return <p>Loading...</p>
 
   if (!data) return <p>No data</p>
+
+  const handleDelete = (id: string) => {
+    mutate(id)
+  }
 
   return (
     <div>
@@ -30,8 +37,8 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
           ))}
       </ul>
       <button onClick={() => setShowForm((prev) => !prev)}>Edit</button>
-      <button>Delete</button>
-      {showForm ? <p>Formularz</p> : null}
+      <button onClick={() => handleDelete(team.id)}>Delete</button>
+      {showForm ? <EditTeam team={team} /> : null}
       <hr />
     </div>
   )
