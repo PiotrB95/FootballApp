@@ -5,6 +5,7 @@ import { TotalGames } from './TotalGames'
 export const StatsTab = () => {
   return (
     <div>
+      <hr />
       <LastGame />
       <TotalGames />
       <TopTeams />

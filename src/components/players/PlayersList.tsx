@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useGetPlayersQuery } from '../../queries/player/useGetPlayersQuery'
 import { SinglePlayer } from './SinglePlayer'
 import { AddPlayer } from './AddPlayer'
+import { CreateButton } from '../styled/CreateButton'
 
 export const PlayersList = () => {
   const { data, isFetching } = useGetPlayersQuery()
@@ -14,9 +15,10 @@ export const PlayersList = () => {
   return (
     <div>
       <hr />
-      <button onClick={() => setShowForm((prev) => !prev)}>
-        Create player
-      </button>
+      <CreateButton
+        label={'Create player'}
+        onClick={() => setShowForm((prev) => !prev)}
+      />
       {showForm ? <AddPlayer /> : null}
       <hr />
       {data.map((player) => (
