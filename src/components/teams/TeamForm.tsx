@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent } from 'react'
 import { TeamDto } from '../../types/team'
+import { Input } from '../Input.tsx'
 
 type TeamFormProps = {
   handleSubmit: (e: FormEvent) => void
@@ -16,40 +17,27 @@ export const TeamForm = ({
 }: TeamFormProps) => {
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <div>
-          <label htmlFor='name'>Name</label>
-        </div>
-        <input
-          type='text'
-          name='name'
-          id='name'
-          value={values.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <div>
-          <label htmlFor='since'>Since</label>
-        </div>
-        <input
-          name='since'
-          id='since'
-          value={values.since || ''}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <div>
-          <label htmlFor='location'>Location</label>
-        </div>
-        <input
-          name='location'
-          id='location'
-          value={values.location}
-          onChange={handleChange}
-        />
-      </div>
+      <Input
+        id='name'
+        type='text'
+        label='Name'
+        value={values.name}
+        onChange={handleChange}
+      />
+      <Input
+        id='since'
+        type='number'
+        label='Since'
+        value={values.since}
+        onChange={handleChange}
+      />
+      <Input
+        id='location'
+        type='text'
+        label='Location'
+        value={values.location}
+        onChange={handleChange}
+      />
       <button type='submit' disabled={isPending}>
         Save
       </button>

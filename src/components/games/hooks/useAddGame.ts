@@ -1,10 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { GameDto } from '../../types'
-import { GameForm } from './GameForm.tsx'
-import { useCreateGameMutation } from '../../queries/game/useCreateGameMutation.ts'
+import { GameDto } from '../../../types'
+import { useCreateGameMutation } from '../../../queries/game/useCreateGameMutation.ts'
 
-export const AddGame = () => {
+export const useAddGame = () => {
   const { mutate, isPending } = useCreateGameMutation()
+
   const [values, setValues] = useState<GameDto>({
     teamA: '',
     teamB: '',
@@ -50,15 +50,12 @@ export const AddGame = () => {
       scoreTeamA: 0,
       scoreTeamB: 0,
     })
-    console.log(values)
   }
 
-  return (
-    <GameForm
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      isPending={isPending}
-      values={values}
-    />
-  )
+  return {
+    values,
+    isPending,
+    handleChange,
+    handleSubmit,
+  }
 }

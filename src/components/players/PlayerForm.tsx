@@ -1,45 +1,37 @@
 import { ChangeEvent, FormEvent } from 'react'
 import { PlayerDto } from '../../types'
 import { ActionButton } from '../styled/ActionButton'
+import { Input } from '../Input.tsx'
 
 type PlayerFormProps = {
+  values: PlayerDto
+  isPending: boolean
   handleSubmit: (e: FormEvent) => void
   handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-  isPending: boolean
-  values: Omit<PlayerDto, 'teamId'>
 }
 
 export const PlayerForm = ({
+  values,
+  isPending,
   handleSubmit,
   handleChange,
-  isPending,
-  values,
 }: PlayerFormProps) => {
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <div>
-          <label htmlFor='name'>Name</label>
-        </div>
-        <input
-          type='text'
-          name='name'
-          id='name'
-          value={values.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <div>
-          <label htmlFor='surname'>Surname</label>
-        </div>
-        <input
-          name='surname'
-          id='surname'
-          value={values.surname}
-          onChange={handleChange}
-        />
-      </div>
+      <Input
+        id='name'
+        type='text'
+        label='Name'
+        value={values.name}
+        onChange={handleChange}
+      />
+      <Input
+        id='surname'
+        type='text'
+        label='Surname'
+        value={values.surname}
+        onChange={handleChange}
+      />
       <ActionButton type='submit' disabled={isPending} label={'Save'} />
     </form>
   )

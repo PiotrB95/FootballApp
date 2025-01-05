@@ -11,10 +11,11 @@ export const useDeletePlayerMutation = () => {
     mutationFn: async (playerId: string) => {
       return apiDelete<PlayerEntity>(`players/${playerId}`)
     },
-    onSuccess: () => {
+    onSuccess: (deletePlayer) => {
       queryClient.invalidateQueries({
         queryKey: ['players'],
       })
+      return deletePlayer
     },
   })
 
