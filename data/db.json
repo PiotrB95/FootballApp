@@ -1,67 +1,19 @@
 {
   "players": [
     {
-      "name": "Arnold",
-      "surname": "Mbappe",
-      "teamId": "1",
-      "id": "1"
-    },
-    {
-      "name": "Barnold",
-      "surname": "Mbappe3",
-      "teamId": null,
-      "id": "2"
-    },
-    {
-      "id": "1b9f",
-      "name": "Marcin",
-      "surname": "Gracz",
-      "teamId": null
-    },
-    {
       "id": "1b2f",
       "name": "Marian",
       "surname": "Graczek",
+      "teamId": "2wad"
+    },
+    {
+      "id": "361c",
+      "name": "Casio",
+      "surname": "Maryna",
       "teamId": "2"
-    },
-    {
-      "name": "Szczepan",
-      "surname": "Plejsonix",
-      "teamId": "1",
-      "id": "8b2f"
-    },
-    {
-      "id": "e5f7",
-      "name": "Jan",
-      "surname": "Bednarek",
-      "teamId": null
-    },
-    {
-      "id": "8ea3",
-      "name": "Foot",
-      "surname": "Ball",
-      "teamId": null
-    },
-    {
-      "id": "f7de",
-      "name": "Michał",
-      "surname": "Anioł",
-      "teamId": null
-    },
-    {
-      "id": "79bd",
-      "name": "Testowy",
-      "surname": "Gracz",
-      "teamId": null
     }
   ],
   "teams": [
-    {
-      "id": "1",
-      "name": "Kasztany",
-      "since": 1992,
-      "location": "Warszawa"
-    },
     {
       "id": "2",
       "name": "Żołędzie",
@@ -77,37 +29,15 @@
   ],
   "games": [
     {
-      "id": "1",
-      "type": "liga",
-      "location": "Warszawa",
-      "time": 90,
-      "scoreTeamA": 2,
-      "scoreTeamB": 1,
-      "teamA": 1,
-      "teamB": 2,
-      "date": "2025-01-02T14:48:00.000Z"
-    },
-    {
-      "id": "2",
-      "type": "puchar",
-      "location": "Gdańsk",
-      "time": 90,
-      "scoreTeamA": 4,
-      "scoreTeamB": 1,
-      "teamA": 2,
-      "teamB": 1,
-      "date": "2025-01-01T15:48:00.000Z"
-    },
-    {
-      "id": "bs23",
-      "type": "puchar",
-      "location": "kraków",
-      "time": 90,
+      "id": "5d8a",
+      "teamA": "2",
+      "teamB": "2wad",
+      "type": "Cup",
+      "date": "2025-01-02T14:09",
+      "time": 30,
+      "location": "Grudziądz",
       "scoreTeamA": 3,
-      "scoreTeamB": 3,
-      "teamA": "2wad",
-      "teamB": 1,
-      "date": "2025-01-13T14:48:00.000Z"
+      "scoreTeamB": 3
     }
   ]
 }

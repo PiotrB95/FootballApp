@@ -6,3 +6,5 @@ export interface PlayerEntity {
 }
 
 export type PlayerDto = Omit<PlayerEntity, 'id'>
+
+export type UpdateTeamPlayerDto = Pick<PlayerEntity, 'teamId'>

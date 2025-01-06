@@ -3,7 +3,7 @@ const API_URL = import.meta.env.VITE_API_URL
 export const useApi = () => {
   const call = async <R, P = object>(
     url: string,
-    method: 'GET' | 'DELETE' | 'POST' | 'PUT',
+    method: 'GET' | 'DELETE' | 'POST' | 'PUT' | 'PATCH',
     payload?: P,
   ): Promise<R> => {
     const fetchConfig = {
@@ -41,6 +41,10 @@ export const useApi = () => {
     return await call<R, P>(url, 'PUT', payload)
   }
 
+  const apiPatch = async <R, P>(url: string, payload: P) => {
+    return await call<R, P>(url, 'PATCH', payload)
+  }
+
   const apiDelete = async <R>(url: string) => {
     return await call<R>(url, 'DELETE')
   }
@@ -50,5 +54,6 @@ export const useApi = () => {
     apiPost,
     apiPut,
     apiDelete,
+    apiPatch,
   }
 }

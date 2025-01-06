@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from 'react'
 import { PlayerEntity } from '../../../types'
 
 export const useDeletePlayer = () => {
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const { mutate, isPending } = useDeletePlayerMutation()
   const [isConfirmOpen, setIsConfirmOpen] = useState(false)
   const [itemToDelete, setItemToDelete] = useState<string>('')
   const [msg, setMsg] = useState('')
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const clearMessageTimeout = () => {
     if (timeoutRef.current) {
