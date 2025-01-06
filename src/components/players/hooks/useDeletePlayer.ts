@@ -40,7 +40,7 @@ export const useDeletePlayer = () => {
   const handleDelete = (player: PlayerEntity) => {
     if (player.teamId !== null) {
       setIsConfirmOpen(false)
-      setMessageWithTimeout("You don't remove player which is in team")
+      setMessageWithTimeout("You can't remove player which is in team")
     } else {
       setIsConfirmOpen(true)
       setItemToDelete(player.id)
