@@ -3,10 +3,10 @@ import { useGetPlayersForTeamQuery } from '../../queries/player/useGetPlayersFor
 import { TeamEntity } from '../../types/team'
 import { ActionButton } from '../styled/ActionButton'
 import { EditTeam } from './EditTeam.tsx'
-import { useDeleteTeamMutation } from '../../queries/team/useDeleteTeamMutation.ts'
 import { useDeletePlayerFromTeam } from '../players/hooks/useDeletePlayerFromTeam.ts'
 import { ConfirmDialog } from '../ConfirmDialog.tsx'
 import { AddPlayerToTeamForm } from './AddPlayerToTeamForm.tsx'
+import { useDeleteTeam } from './hooks/useDeleteTeam.ts'
 
 type SingleTeamProps = {
   team: TeamEntity
@@ -14,7 +14,15 @@ type SingleTeamProps = {
 
 export const SingleTeam = ({ team }: SingleTeamProps) => {
   const { data, isFetching } = useGetPlayersForTeamQuery(team.id)
-  const { mutate } = useDeleteTeamMutation()
+  const {
+    handleDelete: handleDeleteTeam,
+    confirmDelete: confirmDeleteTeam,
+    cancelDelete: cancelDeleteTeam,
+    itemToDelete: itemToDeleteTeam,
+    isConfirmOpen: isConfirmOpenTeam,
+    msg: msgTeam,
+  } = useDeleteTeam()
+
   const {
     handleDeletePlayerFromTeam,
     itemToDelete,
@@ -22,15 +30,11 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
     cancelDelete,
     isConfirmOpen,
   } = useDeletePlayerFromTeam()
+
   const [showForm, setShowForm] = useState<boolean>(false)
 
   if (isFetching) return <p>Loading...</p>
-
   if (!data) return <p>No data</p>
-
-  const handleDeleteTeam = (id: string) => {
-    mutate(id)
-  }
 
   return (
     <div>
@@ -69,6 +73,15 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
         label={'Delete'}
         onClick={() => handleDeleteTeam(team.id)}
       />
+      {msgTeam !== '' ? <p>{msgTeam}</p> : null}
+      {itemToDeleteTeam === team.id && (
+        <ConfirmDialog
+          isOpen={isConfirmOpenTeam}
+          onConfirm={confirmDeleteTeam}
+          onCancel={cancelDeleteTeam}
+          message='Are you sure you want to delete this item?'
+        />
+      )}
       {showForm ? <EditTeam team={team} /> : null}
       <hr />
     </div>
