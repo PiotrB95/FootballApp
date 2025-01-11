@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useGetGamesQuery } from '../../queries/game/useGetGamesQuery'
 import { SingleGame } from './SingleGame'
 import { CreateButton } from '../styled/CreateButton'
+import { AddGame } from './AddGame.tsx'
 
 export const GamesList = () => {
   const { data, isFetching } = useGetGamesQuery()
@@ -18,10 +19,10 @@ export const GamesList = () => {
         label={'Create game'}
         onClick={() => setShowForm((prev) => !prev)}
       />
-      {showForm ? <p>Formularz</p> : null}
+      {showForm ? <AddGame /> : null}
       <hr />
       {data.map((game) => (
-        <SingleGame key={game.id} game={game} />
+        <SingleGame key={game.id} game={game} actionBtn={true} />
       ))}
     </div>
   )

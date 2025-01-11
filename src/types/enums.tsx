@@ -15,3 +15,9 @@ export enum DateOption {
   WEEK = 'week',
   MONTH = 'month',
 }
+
+export enum GameType {
+  Cup = 'puchar',
+  League = 'liga',
+  Friendly = 'towarzyski',
+}

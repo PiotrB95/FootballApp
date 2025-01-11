@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGetTeamsQuery } from '../../queries/team/useGetTeamsQuery'
 import { SingleTeam } from './SingleTeam'
+import { AddTeam } from './AddTeam.tsx'
 import { CreateButton } from '../styled/CreateButton'
 
 export const TeamsList = () => {
@@ -18,7 +19,7 @@ export const TeamsList = () => {
         label={'Create team'}
         onClick={() => setShowForm((prev) => !prev)}
       />
-      {showForm ? <p>Formularz</p> : null}
+      {showForm ? <AddTeam /> : null}
       <hr />
       {data.map((team) => (
         <SingleTeam key={team.id} team={team} />

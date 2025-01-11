@@ -6,7 +6,13 @@ export const LastGame = () => {
 
   if (isFetching) return <p>Loading...</p>
 
-  if (!data) return <p>No data.</p>
+  if (!data || data.length === 0)
+    return (
+      <div>
+        <h2>Last game</h2>
+        <p>No data.</p>
+      </div>
+    )
 
   const latestGame = data.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
