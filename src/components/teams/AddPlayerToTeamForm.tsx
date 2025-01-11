@@ -1,6 +1,7 @@
 import { useAddPlayerToTeam } from '../players/hooks/useAddPlayerToTeam.ts'
 import { PlayerSelect } from '../players/PlayerSelect.tsx'
 import { useGetPlayersQuery } from '../../queries/player/useGetPlayersQuery.ts'
+import { ActionButton } from '../styled/ActionButton.tsx'
 
 type AddPlayerToTeamProps = {
   teamId: string
@@ -21,7 +22,7 @@ export const AddPlayerToTeamForm = ({ teamId }: AddPlayerToTeamProps) => {
         players={data}
         onChange={handleChange}
       />
-      <button type='submit'>Dodaj</button>
+      <ActionButton label='Add player' type='submit' />
     </form>
   )
 }

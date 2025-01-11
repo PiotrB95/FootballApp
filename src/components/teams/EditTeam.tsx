@@ -1,13 +1,13 @@
 import { TeamEntity } from '../../types/team'
 import { TeamForm } from './TeamForm.tsx'
-import { useEditForm } from './hooks/useEditForm.ts'
+import { useEditTeam } from './hooks/useEditTeam.ts'
 
 type EditTeamProps = {
   team: TeamEntity
 }
 
 export const EditTeam = ({ team }: EditTeamProps) => {
-  const { values, isPending, handleSubmit, handleChange } = useEditForm(team)
+  const { values, isPending, handleSubmit, handleChange } = useEditTeam(team)
 
   return (
     <TeamForm

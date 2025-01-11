@@ -1,43 +1,5 @@
 {
-  "players": [
-    {
-      "id": "1b2f",
-      "name": "Marian",
-      "surname": "Graczek",
-      "teamId": "2wad"
-    },
-    {
-      "id": "361c",
-      "name": "Casio",
-      "surname": "Maryna",
-      "teamId": "2"
-    }
-  ],
-  "teams": [
-    {
-      "id": "2",
-      "name": "Żołędzie",
-      "since": 1993,
-      "location": "Gdańsk"
-    },
-    {
-      "id": "2wad",
-      "name": "Jarzębinki",
-      "since": 1990,
-      "location": "Kraków"
-    }
-  ],
-  "games": [
-    {
-      "id": "5d8a",
-      "teamA": "2",
-      "teamB": "2wad",
-      "type": "Cup",
-      "date": "2025-01-02T14:09",
-      "time": 30,
-      "location": "Grudziądz",
-      "scoreTeamA": 3,
-      "scoreTeamB": 3
-    }
-  ]
+  "players": [],
+  "teams": [],
+  "games": []
 }

@@ -47,13 +47,20 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
         {data
           .filter((player) => player.teamId !== null)
           .map((player) => (
-            <div key={player.id}>
-              <li>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+              key={player.id}
+            >
+              <li style={{ marginRight: 10 }}>
                 {player.name} {player.surname}
               </li>
-              <button onClick={() => handleDeletePlayerFromTeam(player.id)}>
-                X
-              </button>
+              <ActionButton
+                label={'Remove player'}
+                onClick={() => handleDeletePlayerFromTeam(player.id)}
+              />
               {itemToDelete === player.id && (
                 <ConfirmDialog
                   isOpen={isConfirmOpen}

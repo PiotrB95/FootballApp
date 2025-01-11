@@ -18,6 +18,7 @@ export const useDeletePlayerFromTeam = () => {
   }
 
   const handleDeletePlayerFromTeam = (playerId: string) => {
+    setItemToDelete('')
     setIsConfirmOpen(true)
     setItemToDelete(playerId)
   }

@@ -39,11 +39,11 @@ export const useDeleteTeam = () => {
   }
 
   const handleDelete = (teamId: string) => {
+    setItemToDelete('')
     const findGame = gamesData?.filter(
       (game) => game.teamA === teamId || game.teamB === teamId,
     )
     if (findGame && findGame.length > 0) {
-      console.log(findGame)
       setIsConfirmOpen(false)
       setMessageWithTimeout("You can't remove team which has in game")
     } else {

@@ -1,11 +1,10 @@
-import { useDeletePlayerMutation } from '../../../queries/player/useDeletePlayerMutation.ts'
 import { useEffect, useRef, useState } from 'react'
-import { PlayerEntity } from '../../../types'
+import { useDeleteGameMutation } from '../../../queries/game/useDeleteGameMutation.ts'
 
-export const useDeletePlayer = () => {
-  const { mutate, isPending } = useDeletePlayerMutation()
+export const useDeleteGame = () => {
+  const { mutate, isPending } = useDeleteGameMutation()
   const [isConfirmOpen, setIsConfirmOpen] = useState(false)
-  const [itemToDelete, setItemToDelete] = useState<string>('')
+  const [itemToDelete, setItemToDelete] = useState<string | ''>('')
   const [msg, setMsg] = useState('')
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -37,14 +36,14 @@ export const useDeletePlayer = () => {
     setItemToDelete('')
   }
 
-  const handleDelete = (player: PlayerEntity) => {
+  const handleDelete = (gameId: string) => {
     setItemToDelete('')
-    if (player.teamId !== null) {
+    if (gameId === null) {
       setIsConfirmOpen(false)
-      setMessageWithTimeout("You can't remove player which is in team")
+      setMessageWithTimeout("You can't remove team which has in game")
     } else {
       setIsConfirmOpen(true)
-      setItemToDelete(player.id)
+      setItemToDelete(gameId)
     }
   }
 

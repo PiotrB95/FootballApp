@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { useUpdateTeamMutation } from '../../../queries/team/useUpdateTeamMutation.ts'
 import { TeamDto, TeamEntity } from '../../../types/team'
 
-export const useEditForm = (team: TeamEntity) => {
+export const useEditTeam = (team: TeamEntity) => {
   const { mutate, isPending } = useUpdateTeamMutation(team.id)
   const [values, setValues] = useState<TeamDto>({
     name: team.name,

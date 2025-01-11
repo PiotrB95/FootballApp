@@ -2,12 +2,26 @@ import { useGetTeamsQuery } from '../../queries/team/useGetTeamsQuery.ts'
 import { TeamSelect } from '../teams/TeamSelect.tsx'
 import { GameTypeSelect } from './GameTypeSelect.tsx'
 import { Input } from '../Input.tsx'
-import { useAddGame } from './hooks/useAddGame.ts'
+import { ChangeEvent, FormEvent } from 'react'
+import { GameDto } from '../../types'
+import { ActionButton } from '../styled/ActionButton.tsx'
 
-export const GameForm = () => {
+type GameFormProps = {
+  handleSubmit: (e: FormEvent) => void
+  handleChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => void
+  isPending: boolean
+  values: GameDto
+}
+
+export const GameForm = ({
+  handleSubmit,
+  handleChange,
+  isPending,
+  values,
+}: GameFormProps) => {
   const { data, isFetching } = useGetTeamsQuery()
-  const { values, isPending, handleSubmit, handleChange } = useAddGame()
-
   if (isFetching) return <p>Loading...</p>
 
   return (
@@ -64,9 +78,7 @@ export const GameForm = () => {
         value={values.location}
         onChange={handleChange}
       />
-      <button type='submit' disabled={isPending}>
-        Save
-      </button>
+      <ActionButton label='Save' type='submit' disabled={isPending} />
     </form>
   )
 }
