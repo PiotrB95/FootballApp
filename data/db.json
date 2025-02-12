@@ -1,0 +1,43 @@
+{
+  "players": [
+    {
+      "id": "3a4f",
+      "name": "Gracz",
+      "surname": "A",
+      "teamId": "2345"
+    },
+    {
+      "id": "64ea",
+      "name": "Gracz",
+      "surname": "B",
+      "teamId": "f915"
+    }
+  ],
+  "teams": [
+    {
+      "id": "2345",
+      "name": "Drużyna A",
+      "since": 1990,
+      "location": "Przykładowo"
+    },
+    {
+      "id": "f915",
+      "name": "Drużyna B",
+      "since": 2001,
+      "location": "Testowo"
+    }
+  ],
+  "games": [
+    {
+      "id": "e5b0",
+      "teamA": "2345",
+      "teamB": "f915",
+      "type": "Cup",
+      "date": "2025-02-03T20:00",
+      "time": 90,
+      "location": "Testowo",
+      "scoreTeamA": 2,
+      "scoreTeamB": 3
+    }
+  ]
+}
