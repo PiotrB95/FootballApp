@@ -44,21 +44,21 @@ const Button = styled.button`
   cursor: pointer;
   transition: background-color 0.3s;
 
-  &:first-of-type {
+  &:last-of-type {
     background-color: #f44336;
     color: white;
   }
 
-  &:first-of-type:hover {
+  &:last-of-type:hover {
     background-color: #d32f2f;
   }
 
-  &:last-of-type {
+  &:first-of-type {
     background-color: #4caf50;
     color: white;
   }
 
-  &:last-of-type:hover {
+  &:first-of-type:hover {
     background-color: #388e3c;
   }
 `
